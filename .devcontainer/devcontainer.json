@@ -1,0 +1,23 @@
+{
+    "name": "pern-todo-devops",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "dsznajder.es7-react-js-snippets",
+                "eamodio.gitlens",
+                "ms-azuretools.vscode-docker",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "postCreateCommand": "node -v && npm -v"
+}
