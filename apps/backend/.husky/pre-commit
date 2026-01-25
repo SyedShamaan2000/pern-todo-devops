@@ -1,2 +1,3 @@
 #!/bin/sh
+cd apps/backend || exit 1
 npx lint-staged
