@@ -4,6 +4,10 @@
         "dockerfile": "Dockerfile"
     },
     "workspaceFolder": "/workspace",
+    "remoteUser": "root",
+    "runArgs": [
+        "--volume=/var/run/docker.sock:/var/run/docker.sock"
+    ],
     "mounts": [
         "source=${localWorkspaceFolder},target=/workspace,type=bind"
     ],
@@ -19,5 +23,5 @@
             ]
         }
     },
-    "postCreateCommand": "node -v && npm -v"
+    "postCreateCommand": "docker version && node -v && npm -v"
 }
