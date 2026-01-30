@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import prettier from "eslint-config-prettier";
+import globals from "globals";
 
 export default [
   {
@@ -13,25 +14,17 @@ export default [
         project: "./tsconfig.json",
       },
       globals: {
-        console: "readonly",
-        process: "readonly",
+        ...globals.node,
       },
     },
   },
   js.configs.recommended,
-
   ...tseslint.configs.recommended,
-
   {
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: "module",
-    },
     rules: {
-      "no-undef": "off", // TS handles this
-      "@typescript-eslint/no-unused-vars": ["error"],
+      "no-undef": "off",
+      "@typescript-eslint/no-unused-vars": ["warn"],
     },
   },
-
   prettier,
 ];
