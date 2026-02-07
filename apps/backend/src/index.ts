@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-test
+const test = 1
 
 app.get("/", (req, res) => {
   res.send("Backend is running (TypeScript)");
